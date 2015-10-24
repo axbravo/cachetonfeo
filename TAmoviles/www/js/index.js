@@ -20,6 +20,9 @@ $(document).ready(function() {
     }
   });
   
+  $('#aceptado').click(function(){
+    alert("Se guardo exitosamente")
+  }
   //$('#oculto').hide();
   
   $('#ejemplo').click(function(){

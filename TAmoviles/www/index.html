@@ -20,9 +20,9 @@ tr {
   <h2>Menu</h2>
   <ul data-role="listview" data-inset="true">
       <li data-role="list-divider">Opciones</li>
-      <li><a href="#">Mis publicaciones</a></li>
+      <li><a href="#MainPage">Mis publicaciones</a></li>
       <li><a href="#">Pasajeros</a></li>
-      <li><a href="#">Mi carro</a></li>   
+      <li><a href="#MiCarro">Mi carro</a></li>   
     </ul>
 </div>  
          <a href="#myPanel" class="ui-btn ui-btn-inline">=</a>
@@ -60,23 +60,64 @@ tr {
       </div>
 </div>           
            
+<div data-role="page" id="MiCarro">
+  <div data-role="main" class="ui-content">
+    <h3>Mi carro</h1>
+<form method="post" action="demoform.asp">
+  <div class="ui-field-contain">
+        <label for="Marca:">Marca</label>
+        <h3>Kia</h3>
+        <br>
+        <label for="Modelo"> Modelo:</label>
+        <h3>Rio 2015</h3> 
+        <label for="Asientos"> Numero de asientos:</label>
+        <h3>5</h3>          
+  </div>
+</form>
+        <div id="Buttons">
+            <a href="#EditCar" class="ui-btn">Editar</a>
+         </div>
+  </div>
+</div>
+
+<div data-role="page" id="EditCar">
+  <div data-role="main" class="ui-content">
+    <h1>Mi carro</h1>
+            <h3>Mi carro</h3>
+            <form method="post" action="demoform.asp">
+        <label for="Marca:">Marca</label>
+        <input type="text" name="marca" id="marca">
+        <label for="Modelo:">Modelo</label>
+        <input type="text" name="modelo" id="modelo">
+        <label for="Asientos:">Numero de asientos</label>
+        <input type="number" name="asiento" id="asiento">
+</form>
+         <div id="Buttons">
+            <a href="#MainPage" id="aceptado" class="ui-btn">Aceptar</a>
+           
+            <a href="#MainPage" class="ui-btn">Cancelar</a>
+         </div>
+    
+  </div>
+</div>   
+
 <div data-role="page" id="EditPage">
   <div data-role="main" class="ui-content">
     <h1>Mi carro</h1>
             <h3>Mis publicaciones</h3>
             <form method="post" action="demoform.asp">
-                <div class="ui-field-contain">
-        <label for="Hora de partida">Hora de partida:</label>
-        <input type="date" name="pday" id="pday">
+                
+                  <label for="Hora de partida">Hora de partida:</label>
+                  <input type="date" name="pday" id="pday">
 
-      <label for="Partida">Lugar de partida:</label>
-        <input type="text" name="partida" id="partida">
+                  <label for="Partida">Lugar de partida:</label>
+                  <input type="text" name="partida" id="partida">
 
-        <label for="Conductor">Conductor:</label>
-        <input type="text" name="name" id="name" placeholder="Nombre..">
-          <label for="Destino">Lugar de destino:</label>
-        <input type="text" name="destino" id="destino">          
-  </div>
+                  <label for="Conductor">Conductor:</label>
+                  <input type="text" name="name" id="name" placeholder="Nombre..">
+                  <label for="Destino">Lugar de destino:</label>
+                  <input type="text" name="destino" id="destino">          
+  
 </form>
          <div id="Buttons">
             <a href="#MainPage" class="ui-btn">Aceptar</a>
