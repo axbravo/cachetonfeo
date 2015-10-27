@@ -1,48 +1,256 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <title>Jalame PUCP</title>
     </head>
+    <style>
+tr {
+    border-bottom: 1px solid lightgray;
+}
+</style>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+    
+  <div data-role="page" id="Login"> 
+    <br>
+    <h1>Login</h1>
+   <form method="post" action="demoform.asp">
+        <label for="User">Usuario:</label>
+         <input type="text" name="user" id="user">
+        <br>
+        <label for="Password">Contrasena:</label>
+         <input type="password" name="password" id="password">
+   </form>
+   <br>
+    <a href="#MainPage" class="ui-btn">Login</a>
+  </div>    
+
+       
+ <div data-role="page" id="MainPage">       
+    
+        <div data-role="panel" id="myPanel">
+  <h2>Menu</h2>
+  <ul data-role="listview" data-inset="true">
+      <li data-role="list-divider">Opciones</li>
+      <li><a href="#MainPage">Mis publicaciones</a></li>
+      <li><a href="#Pasajero">Publicaciones</a></li>
+      <li><a href="#MiCarro">Mi carro</a></li>   
+    </ul>
+</div>  
+         <a href="#myPanel" class="ui-btn ui-btn-inline">=</a>
+             <br>
+            <h1>Mis publicaciones</h1>  
+
+
+</head>
+           <!--Listview-->
+      
+              <ul data-role="listview"  id="publicaciones">
+              </ul>
+               
+<!--              
+         <table data-role="table" class="ui-responsive ui-shadow" >
+      <thead>
+        <tr>
+          <th> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+                    <td>2:05 pm</td>    
+                    <td>Estacionamiento</td>
+        </tr>
+        <tr>
+                    <td>Andrea Bravo</td>    
+                    <td>Pucp - La Molina</td>
+        </tr>
+        <tr>
+                    <td>Voy por toda la javier prado</td>
+        </tr> 
+        </tbody>
+    </table>
+-->    
+  <br>    
+     <div id="Buttons" >
+                <a href="#EditPage"  class="ui-btn">Editar</a>         
+                <a href="#DeletePage"  class="ui-btn">Eliminar</a>
+      </div>
+</div>           
+    
+ <!--<script>
+
+if (author == "A"){
+  phrompt=prompt;
+  snarkconf=confirm;
+}
+
+function mailsome1(){
+  who=phrompt("Inserta una dirección e-mail: ","webmaster@html.it");
+  what=phrompt("Inserta el asunto del mensaje: ","[no subject]");
+  if (snarkconf("Estas seguro de querer enviar un mensaje a "+who+" con el siguiente asunto? "+what+"?")==true){
+    parent.location.href='mailto:'+who+'?subject='+what+'';
+  }
+}
+</script>
+
+<a href='javascript:mailsome1()'>Haz clic aquí</a>
+
+<form>
+<input type=button value="Provami!" onClick="mailsome1()">
+</form>
+-->          
+<div data-role="page" id="MiCarro">
+  <div data-role="main" class="ui-content">
+    <br>
+    <h1>Mi carro</h1>
+    <form method="post" action="demoform.asp">
+     <div class="ui-field-contain">
+      <ul data-role="listview"  id="micarro">
+    </ul><!--
+        <label for="Marca:">Marca</label>
+        <h3>Kia</h3>
+        <br>
+        <label for="Modelo"> Modelo:</label>
+        <h3>Rio 2015</h3> 
+        <label for="Asientos"> Numero de asientos:</label>
+        <h3>5</h3>-->          
+     </div>
+   </form>
+        <div id="Buttons">
+            <a href="#EditCar" class="ui-btn">Editar</a>
+         </div>
+         <div id="Buttons">
+            <a href="#MainPage" class="ui-btn">Regresar</a>
+      </div>
+  </div>
+</div>
+
+<div data-role="page" id="Pasajero">
+  <br>
+    <h1>Publicaciones</h1>
+    <ul data-role="listview"  id="mispublicaciones">
+    </ul>
+    <!--
+         <table data-role="table" class="ui-responsive ui-shadow" >
+      <thead>
+        <tr>
+          <th> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+                    <td>2:05 pm</td>    
+                    <td>Estacionamiento</td>
+        </tr>
+        <tr>
+                    <td>Andrea Bravo</td>    
+                    <td>Pucp - La Molina</td>
+        </tr>
+        <tr>
+                    <td>Voy por toda la javier prado</td>
+        </tr> 
+        </tbody>
+    </table>
+    
+   <div data-role="collapsible" data-collapsed="true">
+        <h1>Detalle</h1>
+        <p>Marca:</p>
+        <p>Toyota</p>
+        <p>Modelo:</p>
+        <p>Yaris</p>
+        <p>Numero de asientos:</p>
+        <p>5</p>
+</div>
+    
+    <br>
+    <table data-role="table" class="ui-responsive ui-shadow" >
+      <thead>
+        <tr>
+          <th> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+                    <td>10:00 pm</td>    
+                    <td>Pabellon V</td>
+        </tr>
+        <tr>
+                    <td>Omar Huaman</td>    
+                    <td>Pucp - Santa Anita</td>
+        </tr>
+        <tr>
+                    <td>Voy por carretera central</td>
+        </tr> 
+        </tbody>
+    </table>
+
+    <div data-role="collapsible" data-collapsed="true">
+      <h1>Detalle</h1>
+        <p>Marca:</p>
+        <p>Kia</p>
+        <p>Modelo:</p>
+        <p>Rio 2015</p>
+        <p>Numero de asientos:</p>
+        <p>5</p>
+    </div>-->
+      <div id="Buttons">
+            <a href="#MainPage" class="ui-btn">Regresar</a>
+      </div>
+  </div>
+</div>   
+
+<div data-role="page" id="EditCar">
+  <div data-role="main" class="ui-content">
+    <h1>Mi carro</h1>
+            <h3>Mi carro</h3>
+            <form method="post" action="demoform.asp">
+        <label for="Marca:">Marca</label>
+        <input type="text" name="marca" id="marca">
+        <label for="Modelo:">Modelo</label>
+        <input type="text" name="modelo" id="modelo">
+        <label for="Asientos:">Numero de asientos</label>
+        <input type="number" name="asiento" id="asiento">
+</form>
+         <div id="Buttons">
+            <a href="#MainPage" id="aceptado" class="ui-btn">Aceptar</a>
+           
+            <a href="#MainPage" class="ui-btn">Cancelar</a>
+         </div>
+    
+  </div>
+</div>   
+
+<div data-role="page" id="EditPage">
+  <div data-role="main" class="ui-content">
+    <h1>Mi carro</h1>
+            <h3>Mis publicaciones</h3>
+            <form method="post" action="demoform.asp">
+                
+                  <label for="Hora de partida">Hora de partida:</label>
+                  <input type="date" name="pday" id="pday">
+
+                  <label for="Partida">Lugar de partida:</label>
+                  <input type="text" name="partida" id="partida">
+
+                  <label for="Conductor">Conductor:</label>
+                  <input type="text" name="name" id="name" placeholder="Nombre..">
+                  <label for="Destino">Lugar de destino:</label>
+                  <input type="text" name="destino" id="destino">          
+  
+</form>
+         <div id="Buttons">
+            <a href="#MainPage" class="ui-btn">Aceptar</a>
+         </div>
+    
+  </div>
+</div>            
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>

@@ -65,8 +65,8 @@ $(document).ready(function() {
       }
 
       $("#publicaciones").listview().listview('refresh');
-     /* $("#mispublicaciones").listview('refresh');
-      $("#micarro").listview('refresh');*/
+      $("#mispublicaciones").listview().listview('refresh');
+      $("#micarro").listview().listview('refresh');
     });
   
  }); 
