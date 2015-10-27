@@ -21,16 +21,19 @@ tr {
   <ul data-role="listview" data-inset="true">
       <li data-role="list-divider">Opciones</li>
       <li><a href="#MainPage">Mis publicaciones</a></li>
-      <li><a href="#">Pasajeros</a></li>
+      <li><a href="#Pasajero">Publicaciones</a></li>
       <li><a href="#MiCarro">Mi carro</a></li>   
     </ul>
 </div>  
          <a href="#myPanel" class="ui-btn ui-btn-inline">=</a>
-             <h1>Mi carro</h1>
-            <h3>Mis publicaciones</h3>  
+             <br>
+            <h1>Mis publicaciones</h1>  
+
+
+</head>
            <!--Listview-->
               <ul data-role="listview"  id="publicaciones">
-      </ul>
+              </ul>
          <table data-role="table" class="ui-responsive ui-shadow" >
       <thead>
         <tr>
@@ -42,7 +45,7 @@ tr {
         <tr>
                     <td>2:05 pm</td>    
                     <td>Estacionamiento</td>
-        </tr
+        </tr>
         <tr>
                     <td>Andrea Bravo</td>    
                     <td>Pucp - La Molina</td>
@@ -59,12 +62,35 @@ tr {
                 <a href="#DeletePage"  class="ui-btn">Eliminar</a>
       </div>
 </div>           
-           
+    
+ <!--<script>
+
+if (author == "A"){
+  phrompt=prompt;
+  snarkconf=confirm;
+}
+
+function mailsome1(){
+  who=phrompt("Inserta una dirección e-mail: ","webmaster@html.it");
+  what=phrompt("Inserta el asunto del mensaje: ","[no subject]");
+  if (snarkconf("Estas seguro de querer enviar un mensaje a "+who+" con el siguiente asunto? "+what+"?")==true){
+    parent.location.href='mailto:'+who+'?subject='+what+'';
+  }
+}
+</script>
+
+<a href='javascript:mailsome1()'>Haz clic aquí</a>
+
+<form>
+<input type=button value="Provami!" onClick="mailsome1()">
+</form>
+-->          
 <div data-role="page" id="MiCarro">
   <div data-role="main" class="ui-content">
-    <h3>Mi carro</h1>
-<form method="post" action="demoform.asp">
-  <div class="ui-field-contain">
+    <br>
+    <h1>Mi carro</h1>
+    <form method="post" action="demoform.asp">
+     <div class="ui-field-contain">
         <label for="Marca:">Marca</label>
         <h3>Kia</h3>
         <br>
@@ -72,13 +98,93 @@ tr {
         <h3>Rio 2015</h3> 
         <label for="Asientos"> Numero de asientos:</label>
         <h3>5</h3>          
-  </div>
-</form>
+     </div>
+   </form>
         <div id="Buttons">
             <a href="#EditCar" class="ui-btn">Editar</a>
          </div>
+         <div id="Buttons">
+            <a href="#MainPage" class="ui-btn">Regresar</a>
+      </div>
   </div>
 </div>
+
+<div data-role="page" id="Pasajero">
+  <br>
+    <h1>Publicaciones</h1>
+         <table data-role="table" class="ui-responsive ui-shadow" >
+      <thead>
+        <tr>
+          <th> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+                    <td>2:05 pm</td>    
+                    <td>Estacionamiento</td>
+        </tr>
+        <tr>
+                    <td>Andrea Bravo</td>    
+                    <td>Pucp - La Molina</td>
+        </tr>
+        <tr>
+                    <td>Voy por toda la javier prado</td>
+        </tr> 
+        </tbody>
+    </table>
+    
+   <div data-role="collapsible" data-collapsed="true">
+        <h1>Detalle</h1>
+        <p>Marca:</p>
+        <p>Toyota</p>
+        <p>Modelo:</p>
+        <p>Yaris</p>
+        <p>Numero de asientos:</p>
+        <p>5</p>
+        <p>Vacantes:</p>
+        <p>5</p>
+</div>
+    
+    <br>
+    <table data-role="table" class="ui-responsive ui-shadow" >
+      <thead>
+        <tr>
+          <th> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+                    <td>10:00 pm</td>    
+                    <td>Pabellon V</td>
+        </tr>
+        <tr>
+                    <td>Omar Huaman</td>    
+                    <td>Pucp - Santa Anita</td>
+        </tr>
+        <tr>
+                    <td>Voy por carretera central</td>
+        </tr> 
+        </tbody>
+    </table>
+
+    <div data-role="collapsible" data-collapsed="true">
+      <h1>Detalle</h1>
+        <p>Marca:</p>
+        <p>Kia</p>
+        <p>Modelo:</p>
+        <p>Rio 2015</p>
+        <p>Numero de asientos:</p>
+        <p>5</p>
+        <p>Vacantes:</p>
+        <p>3</p> 
+    </div>
+      <div id="Buttons">
+            <a href="#MainPage" class="ui-btn">Regresar</a>
+      </div>
+  </div>
+</div>   
 
 <div data-role="page" id="EditCar">
   <div data-role="main" class="ui-content">
