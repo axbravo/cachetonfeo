@@ -4,8 +4,7 @@ $(document).ready(function() {
     url:"http://localhost:8889/publicaciones/",
     crossDomain: true,
     dataType: "json",
-    success: function (json) {
-
+    function (json) {
       alert("success");
       
       $.each( json, function( key, val ) {
@@ -13,12 +12,9 @@ $(document).ready(function() {
       });
 
       $("#publicaciones").listview('refresh');
-    },
-    error: function (xhr, status) {
-      //TODO: no funciona cuando hay 404!
-      alert("Error");
     }
   });
+   });
   
   $('#aceptado').click(function(){
     alert("Se guardo exitosamente")
