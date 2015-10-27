@@ -19,7 +19,7 @@ $(document).ready(function() {
       var arr = jQuery.makeArray(json);
       console.log(arr[0]);
 
-      for ( var i=1; i<arr.length; i++){
+      for ( var i=0; i<arr.length; i++){
            var dato = arr[i].fechaPartida;
            var fechaPartida = dato.text; 
 
@@ -59,8 +59,8 @@ $(document).ready(function() {
 
 
            
-           $("#publicaciones").append('<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>'+arr[i].fechaPartida.toString()+'</td><td>'+arr[i].lugarEncuentro.toString()+'</td></tr><tr><td>'+arr[i].nombre.toString()+ '</td><td>'+arr[i].lugarDestino.toString()+'</td></tr><tr><td>'+arr[i].descripcion.toString()+'</td></tr></tbody></table>');
-          $("#mispublicaciones").append('<table data-role="table" class="ui-responsive ui-shadow" ><thead><tr><th></th><th></th></tr><tbody><tr><td>'+arr[i].fechaPartida.toString()+'</td><td>'+arr[i].lugarEncuentro.toString()+'</td></tr><tr><td>'+arr[i].nombre.toString()+'</td><td>'+arr[i].lugarDestino.toString()+'</td><tr><tr><td>'+arr[i].descripcion.toString()+'</td></tr></tbody></table><div data-role="collapsible" data-collapsed="true"><h1>Detalle</h1><p>Marca:</p><p>'+arr[i].marca.toString()+'</p><p>Modelo:</p><p>'+arr[i].modelo.toString()+'</p><p>Numero de asientos:</p><p>'+arr[i].asientos.toString()+'</p></div><br>');
+           $("#publicaciones").append('<table data-role="table" class="ui-responsive ui-shadow"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>'+arr[i].fechaPartida.toString()+'</td><td>'+arr[i].lugarEncuentro.toString()+'</td></tr><tr><td>'+arr[i].nombre.toString()+ '</td><td>'+arr[i].lugarDestino.toString()+'</td></tr><tr><td>'+arr[i].descripcion.toString()+'</td></tr></tbody></table>');
+          $("#mispublicaciones").append('<table data-role="table" class="ui-responsive ui-shadow" ><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>'+arr[i].fechaPartida.toString()+'</td><td>'+arr[i].lugarEncuentro.toString()+'</td></tr><tr><td>'+arr[i].nombre.toString()+'</td><td>'+arr[i].lugarDestino.toString()+'</td></tr><tr><td>'+arr[i].descripcion.toString()+'</td></tr></tbody></table><div data-role="collapsible" data-collapsed="true"><h1>Detalle</h1><p>Marca:</p><p>'+arr[i].marca.toString()+'</p><p>Modelo:</p><p>'+arr[i].modelo.toString()+'</p><p>Numero de asientos:</p><p>'+arr[i].asientos.toString()+'</p></div>');
            $("#micarro").append('<label for="Marca:">Marca</label><h3>'+arr[i].marca.toString()+'</h3><br><label for="Modelo"> Modelo:</label><h3>'+arr[i].modelo.toString()+'</h3><label for="Asientos">Numero de asientos:</label><h3>'+arr[i].asientos.toString()+'</h3>');
       }
 
